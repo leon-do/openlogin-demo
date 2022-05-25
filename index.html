@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenLogin</title>
+    <!-- https://docs.tor.us/integration-builder/?b=open-login&chain=Ethereum&lang=HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/@toruslabs/openlogin@0"></script>
+  </head>
+  <body></body>
+
+  <script>
+    (async () => {
+      window.openlogin = new Openlogin.default({
+        clientId: "BLFHDEnOqIkfBfRWBJ770x77lJBBq_vwS9r5k-ckx4sgg8ZOJBbYW7rnC_Cq7wdESLxtRbc8C3kWFqumWdeXR9Q",
+        network: "mainnet"
+      });
+      await window.openlogin.init();
+
+      if (window.openlogin.privKey) {
+        alert("PRIVKEY: " + window.openlogin.privKey);
+      } else {
+        await openlogin.login();
+      }
+    })();
+  </script>
+</html>
